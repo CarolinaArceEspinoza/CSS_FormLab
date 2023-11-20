@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" >
+		<title>Form Lab</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cookie&family=Gabarito:wght@400;500;600;700;800;900&family=Glass+Antiqua&family=Gloria+Hallelujah&family=Oswald:wght@200;300;400;500;600;700&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+		<link href="css/style.css" rel="stylesheet">
+		<link rel="shortcut icon" href="images/Fabicon.png" type="image/x-icon">
+	</head>
+	<body>
+		<header>
+			<h1>CSS Forms Lab</h1>
+		</header>
+
+					<!-- MAIN : PAGE CONTENT -->
+<main id="customerOrder">
+
+	<img src="images/lights.svg" alt="Christmas" class="top_image">
+	<div class="form_title">
+		<h2>Christmas Parade</h2>
+	<p>This is your opportunity to participate in the Oakville Christmas Parade 2023! Fill out this form to be part of this magic event.  Every member of our community over 16 years old is welcome.</p>
+	</div>
+	
+	
+		<article>
+	
+		<!-- FORM : Form to order pizza -->
+		<form id="order_placeholder" action="application.php" method="get">
+			<fieldset>
+			<!-- FORM : Second part, information to delivery -->	
+			<legend>Personal Information</legend>
+				<ul>
+	
+				<!-- FORM : Customer Name -->	
+				<li>
+					<label for="fullname">Full Name</label> 
+					<input type="text" name="fullname" id="fullname" required size="25" maxlength="50" placeholder="Your Name" autofocus>
+				</li>
+					
+				<!-- FORM : Customer Phone Number -->
+				<li>
+					<label for="phone">Phone Number (111)111-1111</label>
+					<input type="text" required id="phone" name="phone" pattern="^\([0-9]{3}\)[0-9]{3}-[0-9]{4}$" required placeholder="(111)111-1111">
+				</li>
+				
+				<!-- FORM : Customer E-mail -->
+				<li>
+					<label for="email">E-mail</label>
+					<input id="email" type="email" size="25" name="email" placeholder="yourmail@mail.com">
+				</li>
+	
+				<!-- FORM : Customer Address -->
+				<li>		
+					<label for="address">Full Address</label>
+					<input id="address" type="text" name="address" placeholder="Number, Street, City, Province">
+				</li>
+
+				<!-- FORM : Customer Address -->
+				<li>		
+					<label for="postalCode">Postal Code</label>
+					<input id="postalCode" type="text" name="postalCode" placeholder="X1X 1X1">
+				</li>
+
+				<li> 
+					<label for="birth">Birth of date:</label><br>
+					<input id="birth" type="date" name="birth" value="YYYY-MM-DD" min="1924-01-01" max="2007-01-01">
+				</li>
+
+				<li>
+					<label for="age">Your Age (16 to 99)</label>
+					<input type="number" required id="age" name="age" min="16" max="99" step="1"  placeholder="Your Age">
+				</li>
+
+				<li>		
+					<label for="linkSocial">Your Social Network Profile link</label>
+					<input id="linkSocial" type="url" name="linkSocial" placeholder="https://www.socialnet.com/yourname">
+				</li>
+
+				<li>		
+					<label for="enthusiasticLevel">Your Enthusiastic Level (to find your best labour)</label>
+					<p id="rangeValue">5</p>
+					<input type="range" min="0" max="10" id="enthusiasticLevel" name="enthusiasticLevel" oninput="rangeValue.innerText = this.value" >
+					
+				</li>
+
+				<!-- FORM : Field to define the size of pizzas -->
+				<li>
+				<label for="slot">Preferred Time Slot</label>     
+					<select id="slot" name="slot" required>
+					<option value="">choose...</option>
+					<option value="Morning (07:00 to 10:00)">Morning (07:00 to 10:00)</option>
+					<option value="Late Morning(10:00 to 13:00)">Late Morning(10:00 to 13:00)</option>
+					<option value="Afternoon (13:00 to 16:00)">Afternoon (13:00 to 16:00)</option>
+					</select>
+				</li>
+				
+				<li> 
+					<label for="password">Password (8 characters - 1 number - 1 uppercase):</label>
+					<input type="password" name="password" id="password" required size="8" maxlength="50" placeholder="Password">
+				</li>
+				<li>
+					<label for="avatar" class="file-select" id="src-file" style="width: 94%;">Your avatar (upload a picture):</label>
+					<input type="file" id="avatar" name="src-file" accept="image/png, image/jpeg" style="display: none;" />
+				</li>
+			</ul>
+		</fieldset>
+	
+			<!-- FORM : Checkbox to choose Meats -->
+			<fieldset class="checking">
+				<legend>Choose your options</legend>
+
+				<ul>
+					<li>
+						<label for="inflatable" class="checkbox">
+							Inflatable Character
+							<input type="checkbox" name="costumeOptions[]" id="inflatable" value="Inflatable Character">
+							<span class="check"></span>
+						</label>
+					</li>
+					
+					<li>
+						<label for="elf" class="checkbox">
+							Elf Team (costume)
+							<input type="checkbox" name="costumeOptions[]" id="elf" value="Elf">
+							<span class="check"></span>
+						</label>
+					</li>
+	
+					<li>
+						<label for="character" class="checkbox">
+							Christmas Character (random)
+							<input type="checkbox" name="costumeOptions[]" id="character" value="Christmas Character ">
+							<span class="check"></span>
+						</label>
+					</li>
+	
+					<li>
+						<label for="assistant" class="checkbox">
+							Assist Police and Security
+							<input type="checkbox" name="costumeOptions[]" id="assistant" value="Security Assistant">
+							<span class="check"></span>
+						</label>
+					</li>
+	
+					<li>
+						<label for="scort" class="checkbox">
+							Costumed Character Scort
+							<input type="checkbox" name="costumeOptions[]" id="scort" value="Costumed Scort ">
+							<span class="check"></span>
+						</label>
+					</li>
+					
+					<li>
+						<label for="marshal" class="checkbox">
+							Parade Marshal
+							<input type="checkbox" name="costumeOptions[]" id="marshal" value="Parade Marshal ">
+							<span class="check"></span>
+						</label>
+				</li>
+
+				</ul>
+			</fieldset>
+		
+	
+	
+			<!-- FORM : Field to define base size -->
+			<fieldset class="checking">
+				<legend>CLOTHING SIZE (costume sorting)</legend>
+					<ul>
+						<li>
+							<label for="extraSmall" class="radio">XS (Extra Small)
+							<input type="radio" name="size" id="extraSmall" value="Extra Small" required>
+							<span class="check"></span>
+							</label>
+						</li>
+						<li>
+							<label for="small" class="radio">S (Small)
+							<input type="radio" name="size" id="small" value="Small">
+							<span class="check"></span>
+							</label>
+						</li>
+						<li>
+							<label for="medium" class="radio">M (Medium)
+								<input type="radio" name="size" id="medium" value="Medium">
+								<span class="check"></span>
+							</label>
+						</li>
+
+						<li>       
+							<label for="large" class="radio">L (Large)
+								<input type="radio" name="size" id="large" value="Large">
+								<span class="check"></span>
+							</label>
+						</li>
+
+						<li>
+						<label for="extraLarge" class="radio">XL (Extra Large)
+							<input type="radio" name="size" id="extraLarge" value="Extra Large">
+							<span class="check"></span>
+						</label>
+						</li>
+
+						<li>
+						<label for="doubleExtraLarge" class="radio">XXL (Double Extra Large)
+							<input type="radio" name="size" id="doubleExtraLarge" value="Double Extra Large">
+							<span class="check"></span>
+						</label>
+						</li> 
+					</ul>     
+			</fieldset>
+	
+				<!-- FORM: Submit button -->
+			<button type="submit" style="float: right;">Place the Application</button>
+	
+		</form>
+		</article>
+		<img src="images/background.svg" alt="Christmas" class="bottom_image">
+		</main>
+		<footer>
+			<p>Form and CSS Styling - Carolina Arce 2023</p>
+			<a href="https://www.freepik.com/free-vector/christmas-toys-background-flat-design_11238183.htm#page=11&query=concept%20of%20christmas%20parade&position=0&from_view=search&track=ais&uuid=194ba589-7dda-4c06-9a88-934461eb4fd7" target="_blank">
+				Images from Freepik 
+			</a> 		
+		</footer>
+
+	</body>
+</html>
